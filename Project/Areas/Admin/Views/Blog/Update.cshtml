@@ -1,0 +1,56 @@
+﻿@model BlogViewModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+                    <p class="card-description">
+                        Basic form layout
+                    </p>
+                    <form class="forms-sample" enctype="multipart/form-data" method="post">
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Image</label>
+                            <input class="form-control" asp-for="Image" placeholder="Image" accept="image/*">
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input class="form-control" asp-for="Name" placeholder="Name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <textarea id="editor" class="form-control" asp-for="Description" placeholder="Description"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Comment</label>
+                            <input class="form-control" asp-for="Comment" placeholder="Comment">
+                            <span asp-validation-for="Comment" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Created</label>
+                            <input class="form-control" asp-for="Created" placeholder="Created">
+                            <span asp-validation-for="Created" class="text-danger"></span>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary mr-2">Update</button>
+                        <a class="btn btn-light" asp-action="Index">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model Teacher
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div style="width:200px; height:auto">
+                <img src="~/img/teacher/@Model.Image" style="max-width:100%; max-height: auto" />
+            </div>
+            <h4><strong>Name:</strong>  @Model.Name</h4>
+
+            <h4><strong>Faculty:</strong>  @Model.Faculty</h4>
+            <h4><strong>Experience:</strong>  @Model.Experience</h4>
+            <h4><strong>Profession:</strong>  @Model.Profession</h4>
+            <h4><strong>Degree:</strong> @Model.Degree</h4>
+            <h4><strong>Hobbies:</strong> @Model.Hobbies</h4>
+            <h4><strong>Mail:</strong> @Model.Mail</h4>
+            <h4><strong>PhoneNumber:</strong> @Model.PhoneNumber</h4>
+
+
+
+            <h4><strong>Description:</strong> @Html.Raw(Model.Description)</h4>
+
+            <h4><strong>Skills Name :</strong>  </h4>
+            @foreach (var item in Model.Skills)
+            {
+                <h4>
+                    @item.Name - @item.Percentage %
+                </h4>
+            }
+
+            <h4><strong>Social Media Accounts :</strong>  </h4>
+            @foreach (var item in Model.SocialMedias)
+            {
+                <h4>
+                    <a href="@item.Account"><i style="font-size:24px;" class="@item.Name"></i></a>
+                </h4>
+            }
+
+            <a class="btn btn-info" asp-action="Index">Go Back</a>
+        </div>
+    </div>
+</div>
+

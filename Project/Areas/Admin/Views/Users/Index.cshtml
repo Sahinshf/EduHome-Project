@@ -1,0 +1,55 @@
+﻿@model List<AllUserViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+
+        <div class="card-body">
+            <h4 class="card-title">Service Table</h4>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                            <th>Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Username</td>
+                                <td>@item.Email</td>
+                                <td>@item.Role</td>
+
+                                <td>
+                                    <form asp-action="ToggleActiveStatus" asp-route-id="@item.Id" method="post">
+
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onchange="this.form.submit()" @(item.IsActive ? "checked" : "")>
+                                        </div>
+
+
+                                        @*<input type="checkbox" name="toggleActive" id="toggleActive_@item.Id" onchange="this.form.submit()" @(item.IsActive ? "checked" : "") />*@
+                                    </form>
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" asp-action="Details" asp-route-id="@item.Id">Detail</a>
+                                    <a class="btn btn-warning" asp-action="ChangeRole" asp-route-id="@item.Id">Change Role</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model SocialMedia
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+            <div style="width:200px; height:auto; margin-bottom:10px">
+                <img src="~/img/teacher/@Model.Teacher.Image" style="max-width:100%; max-height: auto" />
+            </div>
+            <h4>Name: @Model.Teacher.Name</h4>
+            <h4>Proffesion: @Model.Teacher.Profession</h4>
+
+            <h4>Social Media : </h4>
+            <i style="font-size:24px;" class="@Model.Name"></i>
+            <br>
+            <a href="@Model.Account">Account Link</a>
+
+
+            <div style="display: flex; gap: 15px">
+
+                <a class="btn btn-info" asp-action="Index">Go Back</a>
+
+            </div>
+        </div>
+    </div>
+</div>

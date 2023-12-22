@@ -1,0 +1,34 @@
+﻿@model Event
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+            <div style="width:200px; height:auto; margin-bottom:10px">
+                <img src="~/img/event/@Model.Image" style="max-width:100%; max-height: auto" />
+            </div>
+            <h4>Name: @Model.Name</h4>
+            <h4>Speakers : </h4>
+            @foreach (var item in Model.EventSpeakers)
+            {
+                <div style="width:200px; height:auto; margin-bottom:10px">
+                    <img src="~/img/event/@item.Speaker.Image" style="max-width:100%; max-height: auto" />
+                </div>
+                <h4>Name: @item.Speaker.Name</h4>
+            }
+
+
+            <div style="display: flex; gap: 15px">
+
+                <a class="btn btn-info" asp-action="Index">Go Back</a>
+
+                <form method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

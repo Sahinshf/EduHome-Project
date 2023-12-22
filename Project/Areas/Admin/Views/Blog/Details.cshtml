@@ -1,0 +1,21 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+            <div style="width:200px; height:auto">
+                <img src="~/img/blog/@Model.Image" style="max-width:100%; max-height: auto" />
+            </div>
+            <h4><strong>Name:</strong> @Model.Name</h4>
+            <h4><strong>Created Time:</strong> @Model.Created</h4>
+            <h4><strong>Comment Count:</strong> @Model.Comment</h4>
+            <h4><strong>Author:</strong> @Model.Author</h4>
+            <h4><strong>Description:</strong> @Html.Raw(Model.Description)</h4>
+
+            <a class="btn btn-info" asp-action="Index">Go Back</a>
+        </div>
+    </div>
+</div>

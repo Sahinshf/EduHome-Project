@@ -1,0 +1,24 @@
+﻿@model AllUserViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <h4><strong>Full Name</strong>: @Model.Fullname</h4>
+            <h4><strong>Email</strong>: @Model.Email</h4>
+
+            <h4><strong>Username</strong> : @Model.Username </h4>
+            <h4><strong>Role</strong> : @Model.Role</h4>
+
+
+            <div style="display: flex; gap: 15px">
+
+                <a class="btn btn-info" asp-action="Index">Go Back</a>
+
+            </div>
+        </div>
+    </div>
+</div>

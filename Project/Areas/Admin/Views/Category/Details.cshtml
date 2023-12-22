@@ -1,0 +1,30 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Name: @Model.Name</h4>
+            @if (Model.CourseCategories.Count == 0)
+            {
+                <h5 class="text-danger">Empty</h5>
+            }
+            else
+            {
+                @foreach (var item in Model.CourseCategories)
+                {
+                    <div style="width:200px; height:auto">
+                        <img src="~/img/course/@item.Course.Image" style="max-width:100%; max-height: auto" />
+                    </div>
+                    <h4>Courses: @item.Course.Name</h4>
+
+                }
+
+            }
+            <a class="btn btn-info" asp-action="Index">Go Back</a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+﻿@model Speaker
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div style="width:200px; height:auto">
+                <img src="~/img/event/@Model.Image" style="max-width:100%; max-height: auto" />
+            </div>
+            <h4>Name: @Model.Name</h4>
+            <h4>Events : </h4>
+
+            @if (Model.EventSpeakers.Count == 0)
+            {
+                <h5 class="text-danger">Empty</h5>
+            }
+            else
+            {
+                @foreach (var item in Model.EventSpeakers)
+                {
+                    <div style="width:200px; height:auto">
+                        <img src="~/img/event/@item.Event.Image" style="max-width:100%; max-height: auto" />
+                    </div>
+                    <h4>Courses: @item.Event.Name</h4>
+
+                }
+
+            }
+            <a class="btn btn-info" asp-action="Index">Go Back</a>
+        </div>
+    </div>
+</div>
+

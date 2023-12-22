@@ -1,0 +1,27 @@
+﻿@using Project.Models;
+@model Course
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+            <div style="width:200px; height:auto">
+                <img src="~/img/course/@Model.Image" style="max-width:100%; max-height: auto" />
+            </div>
+            <h4><strong>Name:</strong> @Model.Name</h4>
+            <h4><strong>Categories:</strong> @ViewBag.Categories </h4>
+            <h4><strong>Price:</strong> @Model.Price</h4>
+            <h4><strong>Class Duration:</strong> @Model.ClassDuration</h4>
+            <h4><strong>Duration:</strong> @Model.Duration</h4>
+            <h4><strong>Start:</strong> @Model.Start</h4>
+            <h4><strong>Language:</strong> @Model.Language</h4>
+            <h4><strong>Skill Level:</strong> @Model.SkillLevel</h4>
+            <h4><strong>Student Count:</strong> @Model.StudentCount</h4>
+            <h4><strong>Description:</strong> @Html.Raw(Model.Description)</h4>
+
+            <a class="btn btn-info" asp-action="Index">Go Back</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@model SpeakerViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+
+                    <form class="forms-sample" enctype="multipart/form-data" method="post">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Image</label>
+                            <input class="form-control" asp-for="Image" placeholder="Image" accept="image/*">
+                            <span style="margin-top:10px" class="text-danger" asp-validation-for="Image"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input class="form-control" asp-for="Name" placeholder="Name">
+                            <span style="margin-top:10px" class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Profession</label>
+                            <input class="form-control" asp-for="Profession" placeholder="Profession">
+                            <span style="margin-top:10px" class="text-danger" asp-validation-for="Profession"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button  asp-action="Index" class="btn btn-light">Cancel</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

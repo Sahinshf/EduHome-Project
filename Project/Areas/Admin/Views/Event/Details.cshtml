@@ -1,0 +1,37 @@
+﻿@model Event
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div style="width:200px; height:auto">
+                <img src="~/img/event/@Model.Image" style="max-width:100%; max-height: auto" />
+            </div>
+            <h4><strong>Name:</strong>  @Model.Name</h4>
+
+            <h4><strong>Venue:</strong>  @Model.Venue</h4>
+            <h4><strong>Event Date:</strong>  @Model.EventDate</h4>
+            <h4><strong>Event Start Time:</strong>  @Model.EventStartTime</h4>
+            <h4><strong>Event End Time:</strong> @Model.EventEndTime</h4>
+
+            <h4>Description: @Html.Raw(Model.Description)</h4>
+
+            <h4><strong>Speakers :</strong>  </h4>
+            @foreach (var item in Model.EventSpeakers)
+            {
+                <div style="width:200px; height:auto">
+                    <img src="~/img/event/@item.Speaker.Image" style="max-width:100%; max-height: auto" />
+                </div>
+                <h4>
+                    <strong>Name:</strong>  @item.Speaker.Name
+
+                </h4>
+            }
+
+            <a class="btn btn-info" asp-action="Index">Go Back</a>
+        </div>
+    </div>
+</div>
+

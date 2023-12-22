@@ -1,0 +1,47 @@
+﻿@model SocialMediaViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Add Skill</h4>
+
+                    <form class="forms-sample" enctype="multipart/form-data" method="post">
+
+                        <input type="radio" id="facebook" name="socialMedia" value="zmdi zmdi-facebook">
+                        <label for="facebook"><i style="font-size:30px;" class="zmdi zmdi-facebook"></i></label><br>
+
+                        <input type="radio" id="pinterest" name="socialMedia" value="zmdi zmdi-pinterest">
+                        <label for="pinterest"><i style="font-size:26px;" class="zmdi zmdi-pinterest"></i></label><br>
+
+                        <input type="radio" id="vimeo" name="socialMedia" value="zmdi zmdi-vimeo">
+                        <label for="vimeo"><i style="font-size:24px;" class="zmdi zmdi-vimeo"></i></label><br>
+
+                        <input type="radio" id="twitter" name="socialMedia" value="zmdi zmdi-twitter">
+                        <label for="twitter"><i style="font-size:24px;" class="zmdi zmdi-twitter"></i></label><br>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Account Link</label>
+                            <input class="form-control" asp-for="Account" placeholder="Enter Link...">
+                            <span style="margin-top:10px" class="text-danger" asp-validation-for="Account"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Teachers</label>
+                            <select asp-for="TeacherId" asp-items="@(new SelectList(ViewBag.Teachers, "Id", "Name"))" class="form-control"></select>
+                            <span asp-validation-for="TeacherId" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mr-2">Create</button>
+                        <a class="btn btn-light" asp-action="Index">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
